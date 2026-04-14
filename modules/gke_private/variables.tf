@@ -13,55 +13,57 @@ variable "prefix" {
   type        = string
 }
 
-variable "core_state_bucket" {
-  description = "GCS bucket containing the core Terraform remote state."
+variable "network_self_link" {
+  description = "VPC self link from the core remote state."
   type        = string
 }
 
-variable "core_state_prefix" {
-  description = "Remote state prefix for the core production environment."
+variable "subnetwork_self_link" {
+  description = "Subnetwork self link from the core remote state."
   type        = string
-  default     = "core/production"
+}
+
+variable "pods_range_name" {
+  description = "Secondary range name used for pods."
+  type        = string
+}
+
+variable "services_range_name" {
+  description = "Secondary range name used for services."
+  type        = string
 }
 
 variable "release_channel" {
   description = "GKE release channel."
   type        = string
-  default     = "REGULAR"
 }
 
 variable "master_ipv4_cidr" {
   description = "CIDR block reserved for the private GKE control plane."
   type        = string
-  default     = "172.16.0.0/28"
 }
 
 variable "authorized_cidr" {
   description = "CIDR allowed to access the GKE control plane."
   type        = string
-  default     = "0.0.0.0/0"
 }
 
 variable "node_machine_type" {
   description = "Machine type for GKE nodes."
   type        = string
-  default     = "e2-standard-4"
 }
 
 variable "node_disk_size_gb" {
   description = "Boot disk size for GKE nodes."
   type        = number
-  default     = 100
 }
 
 variable "min_node_count" {
   description = "Minimum node count for autoscaling."
   type        = number
-  default     = 2
 }
 
 variable "max_node_count" {
   description = "Maximum node count for autoscaling."
   type        = number
-  default     = 6
 }

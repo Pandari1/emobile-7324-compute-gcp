@@ -1,0 +1,9 @@
+project_id        = "your-gcp-project-id"
+region            = "asia-south1"
+prefix            = "emobile-prod"
+core_state_bucket = "your-gcp-project-id-tf-state"
+core_state_prefix = "core/production"
+authorized_cidr   = "203.0.113.10/32"
+node_machine_type = "e2-standard-4"
+min_node_count    = 2
+max_node_count    = 6
